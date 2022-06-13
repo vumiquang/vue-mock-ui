@@ -4,6 +4,7 @@
     <FormProgress></FormProgress>
     <p class="form-end-time">
       <img src="../../assets/calendar-icon.png" /><span
+<<<<<<< HEAD
         >{{ getRegisterDeadline }}までご登録ください</span
       >
     </p>
@@ -28,10 +29,16 @@
       v-else-if="getCurrentForm === 'after-register'"
     ></FormResultRegister>
     <FormThankYou v-else></FormThankYou>
+=======
+        >2021/09/01までご登録ください</span
+      >
+    </p>
+>>>>>>> b04eba2... init pr and layout
   </div>
 </template>
 
 <script>
+<<<<<<< HEAD
 import FormThankYou from "./FormThankYou.vue";
 import FormResultRegister from "./FormResultRegister.vue";
 import FormRegister from "./FormRegister.vue";
@@ -55,6 +62,12 @@ export default {
   },
   computed: {
     ...mapGetters(["getCurrentForm", "getRegisterDeadline"]),
+=======
+import FormProgress from "./FormProgress.vue";
+export default {
+  components: {
+    FormProgress,
+>>>>>>> b04eba2... init pr and layout
   },
 };
 </script>
@@ -72,6 +85,7 @@ export default {
 .form-end-time {
   display: flex;
   align-items: center;
+<<<<<<< HEAD
   margin-bottom: 18px;
 }
 .form-end-time span {
@@ -90,5 +104,8 @@ export default {
 .warning-content {
   font-size: 14px;
   color: #666666;
+=======
+  
+>>>>>>> b04eba2... init pr and layout
 }
 </style>
