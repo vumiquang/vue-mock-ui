@@ -1,6 +1,10 @@
 <template lang="">
   <ul class="list">
+<<<<<<< HEAD
     <li class="list-item" v-for="(t, i) in text" :key="i">
+=======
+    <li class="list-item" v-for="(t, i) in text">
+>>>>>>> c997eb9... create contract form
       <span class="number">{{ i + 1 }}</span>
       <p class="text">
         {{ t }}
@@ -24,7 +28,10 @@ export default {
   background: #ffffff;
   border: 1px solid #dcdcdc;
   border-radius: 4px;
+<<<<<<< HEAD
   margin-bottom: 16px;
+=======
+>>>>>>> c997eb9... create contract form
 }
 p.text {
   font-size: 14px;

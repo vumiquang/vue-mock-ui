@@ -1,4 +1,5 @@
 <template lang="">
+<<<<<<< HEAD
   <Label>
     <div class="wrap-checkbox">
       <input type="checkbox" v-model="checkbox" value="true" />
@@ -12,6 +13,18 @@ export default {
   components: {
     Label,
   },
+=======
+  <div>
+    <div class="required-tag">必須</div>
+    <label>
+      <input type="checkbox" />
+      <span>{{ label }}</span>
+    </label>
+  </div>
+</template>
+<script>
+export default {
+>>>>>>> c997eb9... create contract form
   props: {
     value: {
       type: String,
@@ -26,6 +39,7 @@ export default {
       default: () => true,
     },
   },
+<<<<<<< HEAD
   computed: {
     checkbox: {
       get() {
@@ -57,3 +71,8 @@ export default {
   color: #333333;
 }
 </style>
+=======
+};
+</script>
+<style lang=""></style>
+>>>>>>> c997eb9... create contract form

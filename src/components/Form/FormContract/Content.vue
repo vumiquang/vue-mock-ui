@@ -2,7 +2,11 @@
   <div>
     <ContentText
       v-if="content.type === 'text'"
+<<<<<<< HEAD
       :content="content"
+=======
+      :text="content.text"
+>>>>>>> c997eb9... create contract form
     ></ContentText>
     <ContentList
       v-else-if="content.type === 'list'"

@@ -37,7 +37,11 @@ import FormResultRegister from "./FormResultRegister.vue";
 import FormRegister from "./FormRegister.vue";
 import FormProgress from "./FormProgress.vue";
 import FormContract from "./FormContract";
+<<<<<<< HEAD
 import WrapBlock from "./components/WrapBlock.vue";
+=======
+import WrapBlock from "./WrapBlock.vue";
+>>>>>>> c997eb9... create contract form
 
 import { mapGetters } from "vuex";
 export default {

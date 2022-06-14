@@ -1,6 +1,7 @@
 <template lang="">
   <div>
     <WrapBlock v-for="(field, key) in getContractField" :key="key">
+<<<<<<< HEAD
       <h4 class="title">{{ field.name }}</h4>
       <Content
         v-for="(content, index) in field.contents"
@@ -11,6 +12,12 @@
         <h4 class="title">{{ field.subField.name }}</h4>
         <Content
           v-for="(content, index) in field.subField.contents"
+=======
+      <div v-for="(part, i) in field" :key="i">
+        <h4 class="title">{{ part.name }}</h4>
+        <Content
+          v-for="(content, index) in part.contents"
+>>>>>>> c997eb9... create contract form
           :content="content"
           :key="index"
         ></Content>
@@ -20,7 +27,11 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 import WrapBlock from "../components/WrapBlock.vue";
+=======
+import WrapBlock from "../WrapBlock.vue";
+>>>>>>> c997eb9... create contract form
 // import ContentText from "./ContentText.vue";
 // import ContentList from "./ContentList.vue";
 import Content from "./Content.vue";
