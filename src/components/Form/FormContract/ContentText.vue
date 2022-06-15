@@ -1,14 +1,17 @@
 <template lang="">
   <div class="text">
-    <p v-for="(t, index) in text" :key="index">{{ t }}</p>
+    <p v-show="content.title !== undefined">
+      {{ content.title ? content.title : "" }}
+    </p>
+    <p>{{ content.text }}</p>
   </div>
 </template>
 <script>
 export default {
   props: {
-    text: {
-      type: Array,
-      default: () => [],
+    content: {
+      type: Object,
+      default: () => {},
     },
   },
 };

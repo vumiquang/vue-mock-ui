@@ -1,6 +1,6 @@
 <template lang="">
   <ul class="list">
-    <li class="list-item" v-for="(t, i) in text">
+    <li class="list-item" v-for="(t, i) in text" :key="i">
       <span class="number">{{ i + 1 }}</span>
       <p class="text">
         {{ t }}
@@ -24,6 +24,7 @@ export default {
   background: #ffffff;
   border: 1px solid #dcdcdc;
   border-radius: 4px;
+  margin-bottom: 16px;
 }
 p.text {
   font-size: 14px;

@@ -37,7 +37,7 @@ import FormResultRegister from "./FormResultRegister.vue";
 import FormRegister from "./FormRegister.vue";
 import FormProgress from "./FormProgress.vue";
 import FormContract from "./FormContract";
-import WrapBlock from "./WrapBlock.vue";
+import WrapBlock from "./components/WrapBlock.vue";
 
 import { mapGetters } from "vuex";
 export default {

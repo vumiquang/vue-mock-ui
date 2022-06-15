@@ -2,7 +2,7 @@
   <div>
     <ContentText
       v-if="content.type === 'text'"
-      :text="content.text"
+      :content="content"
     ></ContentText>
     <ContentList
       v-else-if="content.type === 'list'"
