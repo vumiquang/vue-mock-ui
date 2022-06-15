@@ -1,18 +1,25 @@
 <template lang="">
   <div class="text">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4f6cf3b... render contract form
     <p v-show="content.title !== undefined">
       {{ content.title ? content.title : "" }}
     </p>
     <p>{{ content.text }}</p>
+<<<<<<< HEAD
 =======
     <p v-for="(t, index) in text" :key="index">{{ t }}</p>
 >>>>>>> c997eb9... create contract form
+=======
+>>>>>>> 4f6cf3b... render contract form
   </div>
 </template>
 <script>
 export default {
   props: {
+<<<<<<< HEAD
 <<<<<<< HEAD
     content: {
       type: Object,
@@ -22,6 +29,11 @@ export default {
       type: Array,
       default: () => [],
 >>>>>>> c997eb9... create contract form
+=======
+    content: {
+      type: Object,
+      default: () => {},
+>>>>>>> 4f6cf3b... render contract form
     },
   },
 };
