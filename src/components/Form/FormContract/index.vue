@@ -2,6 +2,9 @@
   <div>
     <WrapBlock v-for="(field, key) in getContractField" :key="key">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4f6cf3b... render contract form
       <h4 class="title">{{ field.name }}</h4>
       <Content
         v-for="(content, index) in field.contents"
@@ -10,6 +13,7 @@
       ></Content>
       <div v-if="field.subField !== undefined">
         <h4 class="title">{{ field.subField.name }}</h4>
+<<<<<<< HEAD
         <Content
           v-for="(content, index) in field.subField.contents"
 =======
@@ -18,6 +22,10 @@
         <Content
           v-for="(content, index) in part.contents"
 >>>>>>> c997eb9... create contract form
+=======
+        <Content
+          v-for="(content, index) in field.subField.contents"
+>>>>>>> 4f6cf3b... render contract form
           :content="content"
           :key="index"
         ></Content>
@@ -28,10 +36,14 @@
 
 <script>
 <<<<<<< HEAD
+<<<<<<< HEAD
 import WrapBlock from "../components/WrapBlock.vue";
 =======
 import WrapBlock from "../WrapBlock.vue";
 >>>>>>> c997eb9... create contract form
+=======
+import WrapBlock from "../components/WrapBlock.vue";
+>>>>>>> 4f6cf3b... render contract form
 // import ContentText from "./ContentText.vue";
 // import ContentList from "./ContentList.vue";
 import Content from "./Content.vue";
