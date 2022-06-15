@@ -25,6 +25,7 @@ export default {
     content: {
       type: Object,
       default: () => {},
+      note: "(text{type:String,text:String,title:?String}  list{type:String,text:Array[String]} checkbox{type:String,value:String,label:String,requied:boolean})",
     },
   },
 

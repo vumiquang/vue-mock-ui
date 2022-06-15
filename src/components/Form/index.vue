@@ -58,6 +58,7 @@ export default {
 <style lang="css">
 .form {
   margin-top: 50px;
+  padding-bottom: 80px;
 }
 .form-title {
   font-weight: 400;

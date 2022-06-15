@@ -1,23 +1,26 @@
 <template lang="">
   <ul class="list">
-    <li class="list-item" v-for="(t, i) in text" :key="i">
-      <span class="number">{{ i + 1 }}</span>
+    <li class="list-item" v-for="(rule, index) in text" :key="index">
+      <span class="number">{{ index + 1 }}</span>
       <p class="text">
-        {{ t }}
+        {{ rule }}
       </p>
     </li>
   </ul>
 </template>
+
 <script>
 export default {
   props: {
     text: {
       type: Array,
       default: () => [],
+      note:"Array:String"
     },
   },
 };
 </script>
+
 <style lang="css" scoped>
 .list {
   padding: 8px 10px;

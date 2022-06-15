@@ -1,7 +1,7 @@
 <template lang="">
   <div class="text">
-    <p v-show="content.title !== undefined">
-      {{ content.title ? content.title : "" }}
+    <p v-show="getContentTitle">
+      {{ getContentTitle }}
     </p>
     <p>{{ content.text }}</p>
   </div>
@@ -12,6 +12,12 @@ export default {
     content: {
       type: Object,
       default: () => {},
+      note: "{type:String,text:String,title:?String} ",
+    },
+  },
+  computed: {
+    getContentTitle() {
+      return this.content?.title ?? "";
     },
   },
 };

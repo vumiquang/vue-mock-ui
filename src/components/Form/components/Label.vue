@@ -2,18 +2,16 @@
   <label>
     <div class="tag">
       <div class="tag-group">
-        <div class="tag-white" v-show="subTag !== ''">{{ subTag }}</div>
-        <div class="tag-red">{{ tag }}</div>
+        <div class="tag-white" v-show="getSubTag">{{ getSubTag }}</div>
+        <div class="tag-red" v-show="getTag">{{ getTag }}</div>
       </div>
-      <div class="label-name" v-show="labelName !== ''">
-        {{ labelName }}
-        <span class="label-condition" v-show="labelCondition !== ''"
-          >（{{ labelCondition }}）</span
+      <div class="label-name" v-show="getLabelName">
+        {{ getLabelName }}
         >
       </div>
     </div>
-    <div class="label-note" v-show="labelNote !== ''">
-      {{ labelNote }}
+    <div class="label-note" v-show="getLabelNote">
+      {{ getLabelNote }}
     </div>
     <slot></slot>
   </label>
@@ -27,13 +25,9 @@ export default {
     },
     tag: {
       type: String,
-      default: () => "必須",
-    },
-    labelName: {
-      type: String,
       default: () => "",
     },
-    labelCondition: {
+    labelName: {
       type: String,
       default: () => "",
     },
@@ -42,12 +36,26 @@ export default {
       default: () => "",
     },
   },
+  computed: {
+    getTag() {
+      return this?.tag ?? "";
+    },
+    getSubTag() {
+      return this?.subTag ?? "";
+    },
+    getLabelName() {
+      return this?.labelName ?? "";
+    },
+    getLabelNote() {
+      return this?.labelNote ?? "";
+    },
+  },
 };
 </script>
 <style lang="css" scoped>
 .tag {
   display: flex;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 .tag-group {
   display: flex;

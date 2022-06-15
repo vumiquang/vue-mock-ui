@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import contract from "./modules/contract";
+import employee from "./modules/employee";
 import state from "./state";
 import mutations from "./mutations";
 import actions from "./actions";
@@ -14,6 +15,7 @@ const store = new Vuex.Store({
   actions,
   modules: {
     contract,
+    employee,
   },
   getters,
 });

@@ -19,6 +19,11 @@ export default {
     HeaderTop,
     Form,
   },
+  computed: {
+    getState() {
+      return this.$store.state;
+    },
+  },
 };
 </script>
 <style lang=""></style>
