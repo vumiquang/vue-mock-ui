@@ -414,7 +414,26 @@ const state = {
 
 const mutations = {};
 
-const actions = {};
+const actions = {
+  setValueData({commit},{keyField,name,value,stt}){
+    let filed = state.field[keyField]
+
+    for(block in filed){
+      let typeBlock = block.type;
+
+      if(typeBlock = "input" && block.name = name){
+        block.value = value
+      }else if(type = 'multi'){
+        for(blockcon in block.data){
+          this.if(name = name && index == stt){
+            blockcon.value = value
+          }
+        }
+      }
+    }
+
+  }
+};
 
 export default {
   namespaced: true,
