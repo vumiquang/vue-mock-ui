@@ -1,5 +1,6 @@
 const state = {
   accept: false,
+  finish:false,
   field: [
     {
       name: "雇用契約期間の定め",

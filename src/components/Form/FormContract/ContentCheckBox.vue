@@ -1,5 +1,5 @@
 <template lang="">
-  <Label>
+  <Label :tag="required ? '必須' : ''" :labelName="label">
     <div class="wrap-checkbox">
       <input type="checkbox" v-model="checkbox" value="true" />
       <span>{{ label }}</span>

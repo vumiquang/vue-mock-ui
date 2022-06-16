@@ -45,7 +45,7 @@ import { mapGetters } from "vuex";
 import Button from "../components/Button.vue";
 export default {
   computed: {
-    ...mapGetters(["getContractField"]),
+    ...mapGetters(["getContractField", "getContractAccept"]),
   },
   components: {
     WrapBlock,
@@ -56,8 +56,20 @@ export default {
   },
   methods: {
     nextForm() {
-      this.$store.dispatch("nextForm");
+      this.getContractAccept && this.$store.dispatch("nextForm");
     },
+  },
+  beforeMount() {
+    console.log("before mount");
+  },
+  mounted() {
+    console.log("mounted");
+  },
+  beforeUpdate() {
+    console.log("before update");
+  },
+  updated() {
+    console.log("updated");
   },
 };
 </script>

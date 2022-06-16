@@ -1,5 +1,5 @@
 const state = {
-  currentForm: 0,
+  currentForm: 1,
   formStep: [
     "contract",
     "before-register",

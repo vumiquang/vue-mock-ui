@@ -1,5 +1,6 @@
 <template lang="">
   <div class="form">
+    <BackContract v-show="!isFirstCurrentForm"></BackContract>
     <h1 class="form-title">雇用契約について</h1>
     <FormProgress></FormProgress>
     <p class="form-end-time">
@@ -38,6 +39,7 @@ import FormRegister from "./FormRegister.vue";
 import FormProgress from "./FormProgress.vue";
 import FormContract from "./FormContract";
 import WrapBlock from "./components/WrapBlock.vue";
+import BackContract from "./components/BackContract.vue";
 
 import { mapGetters } from "vuex";
 export default {
@@ -48,14 +50,19 @@ export default {
     FormThankYou,
     FormResultRegister,
     FormRegister,
+    BackContract,
   },
   computed: {
-    ...mapGetters(["getCurrentForm", "getRegisterDeadline"]),
+    ...mapGetters([
+      "getCurrentForm",
+      "getRegisterDeadline",
+      "isFirstCurrentForm",
+    ]),
   },
 };
 </script>
 
-<style lang="css">
+<style lang="scss">
 .form {
   margin-top: 50px;
   padding-bottom: 80px;
