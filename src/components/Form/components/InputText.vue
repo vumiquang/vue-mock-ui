@@ -6,17 +6,25 @@
     :subTag="data.selectOne ? 'どちらか' : ''"
     :disabled="data.disabled"
   >
-    <input
-      type="text"
-      :placeholder="data.placeholder"
-      class="input"
-      :value="data.value"
-      @input="setInput($event)"
-    />
+    <div class="input-wrap">
+      <img
+        src="../../../assets/magnifying-glass.png"
+        v-show="data.searchIcon"
+      />
+      <input
+        type="text"
+        :placeholder="data.placeholder"
+        class="input"
+        :value="data.value"
+        @input="setInput($event)"
+        :disabled="data.disabled"
+      />
+    </div>
   </Label>
 </template>
 <script>
 import Label from "./Label.vue";
+import mixinsInput from "../mixins/mixins-input";
 
 export default {
   props: {
@@ -24,52 +32,33 @@ export default {
       type: Function,
       default: () => () => {},
     },
-    data: {
-      type: Object,
-      default: () => {
-        return {
-          type: "input-text",
-          name: "",
-          label: "",
-          required: true, 
-          placeholder: "入力してください",
-          value: "",
-          searchIcon: false,
-          selectOne: false,
-          labelNote: "",
-          apiSearch: "",
-          disabled: false,
-        };
-      },
-    },
   },
   components: {
     Label,
   },
-  computed: {
-    getTagLabel() {
-      return this.data.required ? "必須" : "";
-    },
-  },
-  methods: {
-    setInput(event) {
-      // this.data.value = event.target.value;
-      this.setValue(this.data.name, event.target.value);
-    },
-  },
+  mixins: [mixinsInput],
 };
 </script>
 <style lang="scss" scoped>
-.input {
+.input-wrap {
+  display: flex;
+  align-items: center;
   width: 100%;
   background: #ffffff;
   border: 1px solid #dcdcdc;
   border-radius: 4px;
-  outline: none;
   padding: 14px 10px;
   font-size: 16px;
   line-height: 16px;
   color: #333333;
+  margin-bottom: 24px;
+  img {
+    margin-right: 5px;
+  }
+}
+.input {
+  border: 0;
+  outline: none;
 }
 .input::placeholder {
   color: #999999;

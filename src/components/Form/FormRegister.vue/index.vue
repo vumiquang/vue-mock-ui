@@ -1,8 +1,11 @@
 <template lang="">
   <div>
-    <WrapBlock>
-      <Title></Title>
-      <InputText :data="data"></InputText>
+    <WrapBlock v-for="(field, fieldName) in getFieldEmployee" :key="fieldName">
+      <Content
+        v-for="(control, index) in flatControl(field)"
+        :control="control"
+        :key="index"
+      ></Content>
     </WrapBlock>
     <Button
       :fullWidth="true"
@@ -11,13 +14,12 @@
     ></Button>
   </div>
 </template>
+
 <script>
 import { mapGetters } from "vuex";
 import WrapBlock from "../components/WrapBlock.vue";
 import Button from "../components/Button.vue";
-import Title from "../components/Title.vue";
-import InputText from "../components/InputText.vue";
-
+import Content from "./Content.vue";
 export default {
   data() {
     return {
@@ -39,18 +41,30 @@ export default {
   components: {
     WrapBlock,
     Button,
-    Title,
-    InputText,
+    Content,
   },
   computed: {
     ...mapGetters(["isCurrentFormFinish", "getFieldEmployee"]),
   },
   methods: {
     nextForm() {
-      // this.isCurrentFormFinish &&
       this.$store.dispatch("nextForm");
+    },
+    flatControl(field) {
+      let controls = [];
+      for (let control of field) {
+        if (control.type !== "multivalue") controls.push(control);
+        else {
+          let subControls = control.data.flat();
+          for (let subControl of subControls) {
+            controls.push(subControl);
+          }
+        }
+      }
+      return controls;
     },
   },
 };
 </script>
+
 <style lang="css"></style>

@@ -4,7 +4,9 @@ const getters = {
   getCurrentForm: (state) => state.formStep[state.currentForm],
   getRegisterDeadline: (state) => state.registerDeadline,
   getContractCheckbox: (state) => (name) => state.contract[name],
-  getFieldEmployee: (state) => state.employee.field,
+  getFieldEmployee: (state) => {
+    return state.employee.field;
+  },
   isFirstCurrentForm: (state) => state.currentForm === 0,
   getCurrentStep: (state) => state.currentForm,
   isCurrentFormFinish: (state) => {
@@ -16,7 +18,6 @@ const getters = {
       return false;
     }
   },
-  
 };
 
 export default getters;

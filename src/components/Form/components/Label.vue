@@ -1,21 +1,25 @@
 <template lang="">
-  <label :disabled="disabled">
-    <div class="tag" v-show="getSubTag || getTag">
-      <div class="tag-group">
-        <div class="tag-white" v-show="getSubTag">{{ getSubTag }}</div>
-        <div class="tag-red" v-show="getTag">{{ getTag }}</div>
+  <div :disabled="disabled" class="label">
+    <div>
+      <div class="label-top">
+        <div class="tag" v-show="getSubTag || getTag">
+          <div class="tag-group">
+            <div class="tag-white" v-show="getSubTag">{{ getSubTag }}</div>
+            <div class="tag-red" v-show="getTag">{{ getTag }}</div>
+          </div>
+        </div>
+        <div class="label-name" v-show="getLabelName">
+          {{ getLabelName }}
+        </div>
       </div>
-      <div class="label-name" v-show="getLabelName">
-        {{ getLabelName }}
-        >
+      <div class="label-note" v-show="getLabelNote">
+        {{ getLabelNote }}
       </div>
-    </div>
-    <div class="label-note" v-show="getLabelNote">
-      {{ getLabelNote }}
     </div>
     <slot></slot>
-  </label>
+  </div>
 </template>
+
 <script>
 export default {
   props: {
@@ -56,9 +60,10 @@ export default {
   },
 };
 </script>
+
 <style lang="scss" scoped>
-label:disabled,
-label[disabled] {
+.label:disabled,
+.label[disabled] {
   .tag-group {
     background-color: #999999;
   }
@@ -69,7 +74,14 @@ label[disabled] {
     color: #dcdcdc;
   }
 }
-label {
+.label {
+  > div {
+    margin-bottom: 10px;
+  }
+  .label-top {
+    display: flex;
+    align-items: baseline;
+  }
   .tag {
     display: flex;
     margin-bottom: 8px;
@@ -104,7 +116,6 @@ label {
   .label-note {
     font-size: 14px;
     color: #666666;
-    margin-bottom: 10px;
   }
 }
 </style>

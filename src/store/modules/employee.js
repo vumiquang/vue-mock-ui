@@ -25,6 +25,7 @@ const inputImage = {
   name: "",
   labelNote: "",
   disabled: false,
+  showDrop: true,
 };
 
 const inputText = {
@@ -224,11 +225,7 @@ const state = {
       {
         ...JSON.parse(JSON.stringify(inputSingleDate)),
         name: "birthDay",
-      },
-      {
-        ...info,
-        label: "年齢",
-        description: "生年月日を入力すると表示されます",
+        label: "生年月日",
       },
       {
         ...inputText,
@@ -253,7 +250,7 @@ const state = {
         type: "multivalue",
         number: 2,
         button: "通勤方法を追加する",
-        dataModel: [
+        data: [
           [
             {
               ...inputDate,
@@ -319,14 +316,15 @@ const state = {
         name: "previosCompanyName",
       },
       {
-        ...inputFile,
+        ...inputImage,
         label: "資格証明書類（年金手帳）",
         labelNote: "年金手帳の写真を添付してください",
         required: false,
         name: "pensionNotebook",
+        showDrop: false,
       },
       {
-        ...inputFile,
+        ...inputImage,
         label: "資格署名書類（雇用保険被保険者証）",
         labelNote: "雇用保険被保険者証の写真を添付してください",
         required: false,
@@ -415,24 +413,21 @@ const state = {
 const mutations = {};
 
 const actions = {
-  setValueData({commit},{keyField,name,value,stt}){
-    let filed = state.field[keyField]
-
-    for(block in filed){
-      let typeBlock = block.type;
-
-      if(typeBlock = "input" && block.name = name){
-        block.value = value
-      }else if(type = 'multi'){
-        for(blockcon in block.data){
-          this.if(name = name && index == stt){
-            blockcon.value = value
-          }
-        }
-      }
-    }
-
-  }
+  setValueData({ commit }, { keyField, name, value, pos }) {
+    // let field = state.field[keyField]
+    // for(block in filed){
+    //   let typeBlock = block.type;
+    //   if(typeBlock = "input" && block.name = name){
+    //     block.value = value
+    //   }else if(type = 'multi'){
+    //     for(blockcon in block.data){
+    //       this.if(name = name && index == stt){
+    //         blockcon.value = value
+    //       }
+    //     }
+    //   }
+    // }
+  },
 };
 
 export default {
